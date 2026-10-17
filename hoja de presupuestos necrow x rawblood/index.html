@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>RAWBLOOD | Servicios 2026</title>
+  <meta name="description" content="Producción musical para artistas: mix, master, beats a medida y programas de producción.">
+
+  <style>
+    @font-face {
+      font-family: 'A Love of Thunder';
+      src: url('A-Love-of-Thunder.woff2') format('woff2'),
+           url('A-Love-of-Thunder.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #0b0b0b;
+      --surface: #131313;
+      --line: #262626;
+      --red: #e60000;
+      --text: #f2f2f2;
+      --muted: #9a9a9a;
+      --display: 'A Love of Thunder', Impact, sans-serif;
+      --sans: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 88px;
+    }
+
+    @media (min-width: 721px) {
+      body { padding-bottom: 0; }
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    section:nth-of-type(even) {
+      background: #111111;
+      border-top-color: #1f1f1f;
+    }
+
+    h2 {
+      font-family: var(--display);
+      font-weight: normal;
+      font-size: clamp(30px, 6vw, 42px);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    h3 { font-size: 18px; font-weight: 700; line-height: 1.25; }
+
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 56ch;
+      margin-top: 10px;
+    }
+
+    .section-head { margin-bottom: 28px; }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 4px;
+      border: 1px solid var(--red);
+      background: var(--red);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover { opacity: 0.88; }
+
+    .btn--ghost {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .btn--small {
+      min-height: 38px;
+      padding: 0 14px;
+      font-size: 12px;
+    }
+
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+    }
+
+    /* Header */
+    .site-header {
+      padding: 28px 0 12px;
+      text-align: center;
+    }
+
+    .brand {
+      display: inline-block;
+    }
+
+    .logo {
+      font-family: var(--display);
+      font-size: 36px;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .records {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2px;
+      font-family: var(--display);
+      font-size: 11px;
+      line-height: 1;
+      color: var(--muted);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 10px 20px 16px;
+      border-top: none;
+      text-align: center;
+    }
+
+    .morph {
+      position: relative;
+      height: 44px;
+      width: 100%;
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .morph span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      filter: blur(10px);
+      animation: morph 7.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .morph span:nth-child(2) { animation-delay: 3.6s; }
+
+    @keyframes morph {
+      0%   { opacity: 0; filter: blur(10px); transform: scale(0.96); }
+      8%   { opacity: 1; filter: blur(0);    transform: scale(1); }
+      42%  { opacity: 1; filter: blur(0);    transform: scale(1); }
+      50%  { opacity: 0; filter: blur(10px); transform: scale(1.04); }
+      100% { opacity: 0; filter: blur(10px); transform: scale(1.04); }
+    }
+
+    .hero .lead {
+      margin: 12px auto 0;
+      font-size: 14px;
+      max-width: 580px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    /* Servicios */
+    .service {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px 24px;
+      align-items: start;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service:first-of-type { padding-top: 0; }
+    .service:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .service .detail {
+      color: #cfcfcf;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .price {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .price strong {
+      font-size: 20px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .price .btn { margin-top: 10px; }
+
+    /* Programa destacado */
+    .featured {
+      border: 1px solid var(--red);
+      border-radius: 8px;
+      padding: 28px;
+      background: #140707;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--red);
+      color: var(--text);
+    }
+
+    .tag--solid { background: var(--red); }
+
+    .featured-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .featured-top h2 { font-size: clamp(34px, 7vw, 52px); }
+
+    .featured-price {
+      text-align: right;
+    }
+
+    .featured-price strong {
+      display: block;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .featured-price small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .featured > p {
+      color: var(--muted);
+      margin: 14px 0 0;
+      max-width: 60ch;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .step {
+      border-top: 2px solid var(--red);
+      padding-top: 10px;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .sub-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    /* Videos */
+    .videos {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(240px, 300px);
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    .video { scroll-snap-align: start; }
+
+    .video-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .video-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-frame button {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video h4 {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    /* Beat leases */
+    .beat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .beat-price {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .upsell {
+      margin-top: 24px;
+      padding: 16px;
+      border: 1px dashed var(--line);
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .upsell strong { color: var(--text); }
+
+    /* RAW Credits */
+    .credits-copy {
+      color: var(--muted);
+      max-width: 56ch;
+      margin-top: 10px;
+    }
+
+    .credits-copy strong { color: var(--text); }
+
+    .rc-example {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .rc-example b {
+      color: var(--red);
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    details.rc-benefits {
+      margin-top: 8px;
+    }
+
+    details.rc-benefits summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      font-weight: 600;
+      border-bottom: 1px solid var(--line);
+    }
+
+    details.rc-benefits summary::-webkit-details-marker { display: none; }
+
+    details.rc-benefits summary::after {
+      content: '+';
+      color: var(--red);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    details.rc-benefits[open] summary::after { content: '–'; }
+
+    .rc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .rc-row b {
+      color: var(--red);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+      .rc-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+    }
+
+    .beats-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .beats-head h2 { margin: 0; }
+
+    .beats-price {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .beat-price {
+      font-size: 28px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* FAQ */
+    details.faq {
+      border-bottom: 1px solid var(--line);
+    }
+
+    details.faq:first-of-type { border-top: 1px solid var(--line); }
+
+    details.faq-group > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--display);
+      font-size: clamp(30px, 6vw, 42px);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    details.faq-group > summary::-webkit-details-marker { display: none; }
+
+    details.faq-group > summary::after {
+      content: '+';
+      color: var(--red);
+      font-family: var(--sans);
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    details.faq-group[open] > summary::after { content: '–'; }
+
+    details.faq-group[open] > summary { margin-bottom: 20px; }
+
+    details.faq summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0;
+      font-weight: 600;
+    }
+
+    details.faq summary::-webkit-details-marker { display: none; }
+
+    details.faq summary::after {
+      content: '+';
+      color: var(--red);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    details.faq[open] summary::after { content: '–'; }
+
+    details.faq p {
+      color: var(--muted);
+      font-size: 14px;
+      padding-bottom: 18px;
+      max-width: 60ch;
+    }
+
+    .fine-print {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    details.licenses {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    details.licenses summary {
+      cursor: pointer;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    details.licenses ul {
+      list-style: none;
+      margin-top: 10px;
+      display: grid;
+      gap: 6px;
+    }
+
+    details.licenses strong { color: var(--text); }
+
+    /* Footer */
+    footer {
+      padding: 32px 20px 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .powered-label {
+      font-size: 8px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      opacity: 0.8;
+    }
+
+    .rawblood-footer-text {
+      font-family: var(--display);
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .footer-divider {
+      width: 1px;
+      height: 30px;
+      background-color: #ffffff;
+      opacity: 0.6;
+    }
+
+    .necrow-img {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Barra fija móvil */
+    .sticky-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+      background: rgba(11, 11, 11, 0.96);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--line);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .sticky-bar.show { transform: none; }
+
+    .sticky-bar strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .sticky-bar span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (min-width: 721px) {
+      .sticky-bar { display: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      section { padding: 44px 0; }
+
+      .steps { grid-template-columns: repeat(2, 1fr); }
+
+      .featured { padding: 20px; }
+
+      .featured-price { text-align: left; }
+    }
+
+    @media (max-width: 480px) {
+      .actions .btn { flex: 1 1 100%; }
+
+      .service { grid-template-columns: 1fr auto; gap: 12px; }
+
+      .service > div:first-child { min-width: 0; }
+
+      .price strong { font-size: 17px; }
+
+      .rc-example { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .morph span { animation: none; filter: none; }
+      .morph span:first-child { opacity: 1; }
+      .sticky-bar { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">RAWBLOOD</div>
+      <div class="records"><span>r</span><span>e</span><span>c</span><span>o</span><span>r</span><span>d</span><span>s</span></div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero wrap">
+    <div class="morph" aria-label="Producción musical para artistas">
+      <span>Producción musical</span>
+      <span>para artistas</span>
+    </div>
+    <p class="lead">Convertimos tu idea en una canción lista para salir a plataformas.</p>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/543447449416?text=Hola%20RAWBLOOD%2C%20quiero%20contratar%20un%20servicio." target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+      <a class="btn btn--ghost" href="#beats">Ver beats</a>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Servicios a medida</h2>
+        <p class="lead">Elegí según dónde estás hoy.</p>
+      </div>
+
+      <article class="service">
+        <div>
+          <h3>Mix &amp; Master</h3>
+          <p>Ideal si ya tenés la canción grabada.</p>
+          <p class="detail">WAV listo para plataformas · 2 revisiones incluidas</p>
+        </div>
+        <div class="price">
+          <strong>$70.000</strong>
+          <small>+ 3.500 RC</small>
+          <a class="btn btn--small" href="https://wa.me/543447449416?text=Hola%20RAWBLOOD%2C%20quiero%20contratar%20Mix%20y%20Master." target="_blank" rel="noopener">Quiero este</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div>
+          <h3>Custom Beat</h3>
+          <p>Ideal si querés una instrumental exclusiva, creada desde cero según tu visión y tu tono vocal.</p>
+          <p class="detail">Exclusivo · Stems en WAV</p>
+        </div>
+        <div class="price">
+          <strong>$100.000</strong>
+          <small>+ 5.000 RC</small>
+          <a class="btn btn--small" href="https://wa.me/543447449416?text=Hola%20RAWBLOOD%2C%20quiero%20contratar%20un%20Custom%20Beat." target="_blank" rel="noopener">Quiero este</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div>
+          <h3>Producción Completa</h3>
+          <p>Ideal si querés una canción terminada, de la idea al master.</p>
+          <p class="detail">Beat a medida · Mezcla vocal · Mastering final</p>
+        </div>
+        <div class="price">
+          <strong>$150.000</strong>
+          <small>+ 7.500 RC</small>
+          <a class="btn btn--small" href="https://wa.me/543447449416?text=Hola%20RAWBLOOD%2C%20quiero%20contratar%20Producci%C3%B3n%20Completa." target="_blank" rel="noopener">Quiero este</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div>
+          <h3>Grabación en estudio</h3>
+          <p>Sesión presencial guiada por productor y director técnico.</p>
+          <p class="detail">Según estudio y ubicación</p>
+        </div>
+        <div class="price">
+          <strong>Consultar</strong>
+          <small>Según disponibilidad</small>
+          <a class="btn btn--small btn--ghost" href="https://wa.me/543447449416?text=Hola%20RAWBLOOD%2C%20quiero%20consultar%20disponibilidad%20para%20grabar%20en%20estudio." target="_blank" rel="noopener">Consultar</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROGRAMA DESTACADO -->
+  <section id="ep">
+    <div class="wrap">
+      <div class="featured">
+        <div class="tags">
+          <span class="tag tag--solid">Más pedido</span>
+          <span class="tag">Cupos limitados</span>
+        </div>
+
+        <div class="featured-top">
+          <h2>EP Framework</h2>
+          <div class="featured-price">
+            <small>Desde</small>
+            <strong>$500.000</strong>
+            <small>o 3 cuotas de $166.666</small>
+          </div>
+        </div>
+
+        <p>12 semanas para tu próximo proyecto: 4 canciones con dirección artística, producción, mix, master y plan de lanzamiento.</p>
+
+        <div class="steps">
+          <div class="step"><strong>Identidad</strong><span>Sonido y concepto</span></div>
+          <div class="step"><strong>Desarrollo</strong><span>Las 4 canciones</span></div>
+          <div class="step"><strong>Finalización</strong><span>Mix y master</span></div>
+          <div class="step"><strong>Lanzamiento</strong><span>Ecosistema completo</span></div>
+        </div>
+
+        <p class="sub-title">Trabajos reales</p>
+
+        <div class="videos">
+          <div class="video">
+            <div class="video-frame" data-id="P_gUPPUqW68">
+              <img src="https://i3.ytimg.com/vi/P_gUPPUqW68/hqdefault.jpg" alt="Contra Todo Pronóstico" loading="lazy">
+              <button aria-label="Reproducir Contra Todo Pronóstico"></button>
+              <span class="play-icon">▶</span>
+            </div>
+            <h4>Contra Todo Pronóstico</h4>
+          </div>
+          <div class="video">
+            <div class="video-frame" data-id="-sc2jjmo8Sg">
+              <img src="https://i3.ytimg.com/vi/-sc2jjmo8Sg/hqdefault.jpg" alt="FINDE EP" loading="lazy">
+              <button aria-label="Reproducir FINDE EP"></button>
+              <span class="play-icon">▶</span>
+            </div>
+            <h4>FINDE EP</h4>
+          </div>
+          <div class="video">
+            <div class="video-frame" data-id="xK9VxHaK2cs">
+              <img src="https://i3.ytimg.com/vi/xK9VxHaK2cs/hqdefault.jpg" alt="NO EXCUSES 01" loading="lazy">
+              <button aria-label="Reproducir NO EXCUSES 01"></button>
+              <span class="play-icon">▶</span>
+            </div>
+            <h4>NO EXCUSES 01</h4>
+          </div>
+        </div>
+
+        <div class="actions" style="justify-content: flex-start; margin-top: 0;">
+          <a class="btn" href="https://wa.me/543447449416?text=Hola%20RAWBLOOD%2C%20quiero%20sumarme%20al%20EP%20Framework." target="_blank" rel="noopener">Quiero sumarme</a>
+          <a class="btn btn--ghost" href="ep-framework.pdf" target="_blank" rel="noopener">Ver dossier</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT LEASES -->
+  <section id="beats">
+    <div class="wrap">
+      <div class="beats-head">
+        <h2>Beats</h2>
+        <div class="beats-price">
+          <span class="beat-price">$25.000</span>
+          <a class="btn btn--small" href="https://samply.app/p/r7RydIc2qlb7vLhgf7Lb?token=d1040810-bede-4045-96ac-2d9e7e49ba94&si=NWunxAYjnER1Us8Fbiqmbz8EQ8u2" target="_blank" rel="noopener">Ver catálogo</a>
+        </div>
+      </div>
+      <p class="lead">Instrumentales terminadas, con entrega inmediata.</p>
+      <p class="lead" style="margin-top: 6px; color: var(--text);"><strong>Licencia lease</strong></p>
+
+      <div class="upsell">
+        <div>
+          <p>¿Querés cambiarle algo o hacerlo exclusivo?</p>
+          <strong style="display: block; margin-top: 2px;">Lo transformamos en Custom.</strong>
+        </div>
+        <a class="btn btn--small btn--ghost" href="https://wa.me/543447449416?text=Hola%20RAWBLOOD%2C%20vi%20un%20beat%20en%20el%20cat%C3%A1logo%20y%20quiero%20modificarlo." target="_blank" rel="noopener">Modificar este beat</a>
+      </div>
+
+      <details class="licenses">
+        <summary>Licencias y exclusividad</summary>
+        <ul>
+          <li><strong>Lease estándar:</strong> uso comercial tal como está publicada. Sigue disponible en el catálogo.</li>
+          <li><strong>Exclusividad:</strong> retiro definitivo del mercado. Consultar.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- RAW CREDITS -->
+  <section id="credits">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>RAW Credits</h2>
+        <p class="credits-copy"><strong>Tu inversión vuelve.</strong> El 5% de cada contratación se acumula como crédito para tus próximos proyectos.</p>
+      </div>
+
+      <div class="rc-example">
+        <span>Producción Completa de $150.000</span>
+        <b>+ 7.500 RC</b>
+      </div>
+
+      <details class="rc-benefits">
+        <summary>Beneficios disponibles</summary>
+        <div class="rc-row">
+          <b>8.000 RC</b>
+          <span>1 Beat Lease (Catálogo) FREE</span>
+        </div>
+        <div class="rc-row">
+          <b>12.000 RC</b>
+          <span>50% OFF en Mix y Master</span>
+        </div>
+        <div class="rc-row">
+          <b>20.000 RC</b>
+          <span>50% OFF en Beat Custom</span>
+        </div>
+        <div class="rc-row">
+          <b>30.000 RC</b>
+          <span>25% OFF en Producción Completa</span>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <details class="faq-group">
+        <summary><span>Preguntas frecuentes</span></summary>
+
+      <details class="faq">
+        <summary>¿Qué incluye cada servicio?</summary>
+        <p>Entregables claros, como WAV, stems, revisiones y dirección artística, detallados en cada contratación.</p>
+      </details>
+
+      <details class="faq">
+        <summary>¿Cuánto demora un proyecto?</summary>
+        <p>Servicios sueltos: de 3 a 5 días hábiles. EP Framework: 12 semanas.</p>
+      </details>
+
+      <details class="faq">
+        <summary>¿Cómo envío los stems?</summary>
+        <p>En WAV de 24 bits, consolidados desde el segundo cero (00:00). Incluye 2 revisiones sin cargo.</p>
+      </details>
+
+      <details class="faq">
+        <summary>¿Cómo funcionan los pagos?</summary>
+        <p>Se abona 50% de seña para iniciar y congelar la fecha, y el saldo contra entrega. Aceptamos transferencia, Mercado Pago y USDT.</p>
+      </details>
+
+      <details class="faq">
+        <summary>¿Cómo funcionan los RAW Credits?</summary>
+        <p>Los beneficios no son acumulables y podés canjear hasta 2 por mes. Tus créditos tienen una vigencia de 6 meses.</p>
+      </details>
+
+      <p class="fine-print">Tarifas sujetas a actualización según requerimientos técnicos.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">
+      <span class="powered-label">Powered by</span>
+      <div class="rawblood-footer-text">RAWBLOOD</div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="necrow-wrap">
+      <img class="necrow-img" src="necrow - vector - white copia.jpg" alt="NECROW">
+    </div>
+  </footer>
+
+  <!-- Barra fija móvil -->
+  <div class="sticky-bar" id="stickyBar">
+    <div>
+      <strong>¿Listo para empezar?</strong>
+      <span>Hablemos de tu proyecto</span>
+    </div>
+    <a class="btn btn--small" href="https://wa.me/543447449416?text=Hola%20RAWBLOOD%2C%20vi%20la%20propuesta%20y%20quiero%20consultar." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <script>
+    // Barra fija: aparece al pasar el hero
+    const stickyBar = document.getElementById('stickyBar');
+    const toggleSticky = () => {
+      stickyBar.classList.toggle('show', window.scrollY > 420);
+    };
+    window.addEventListener('scroll', toggleSticky, { passive: true });
+    toggleSticky();
+
+    // Videos: se reproducen en su lugar, de a uno a la vez
+    const frames = document.querySelectorAll('.video-frame');
+
+    const showThumb = (frame) => {
+      const id = frame.dataset.id;
+      const title = frame.parentElement.querySelector('h4').textContent;
+      frame.innerHTML = `
+        <img src="https://i3.ytimg.com/vi/${id}/hqdefault.jpg" alt="${title}" loading="lazy">
+        <button aria-label="Reproducir ${title}"></button>
+        <span class="play-icon">▶</span>`;
+    };
+
+    frames.forEach((frame) => {
+      frame.addEventListener('click', (e) => {
+        if (!e.target.closest('button')) return;
+        frames.forEach((other) => {
+          if (other !== frame && other.querySelector('iframe')) showThumb(other);
+        });
+        const id = frame.dataset.id;
+        frame.innerHTML = `
+          <iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0"
+                  allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen title="Video"></iframe>`;
+      });
+    });
+  </script>
+
+</body>
+</html>
